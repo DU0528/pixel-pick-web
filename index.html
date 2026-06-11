@@ -3,49 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pixel Pick</title>
+  <title>Pixel Pick — 화면 색상 추출 도구 | HEX RGB HSL 코드 복사</title>
+  <meta name="description" content="화면 어디서든 원하는 색상을 클릭 한 번으로 추출하세요. HEX, RGB, HSL 코드를 즉시 확인하고 바로 복사할 수 있는 무료 색상 추출 도구입니다." />
+  <meta property="og:title" content="Pixel Pick — 화면 색상 추출 도구" />
+  <meta property="og:description" content="HEX, RGB, HSL 코드를 즉시 추출하고 복사하는 무료 스포이드 도구" />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="style.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2798929393747698" crossorigin="anonymous"></script>
 </head>
 <body>
-  <main>
-    <h1 class="logo">Pixel Pick</h1>
-    <p class="subtitle">화면의 어느 곳이든 색상을 추출하세요</p>
 
-    <div id="unsupported-banner" class="banner hidden">
-      이 기능은 <strong>Chrome 또는 Edge</strong>에서만 지원됩니다.
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="nav-logo">Pixel Pick</span>
+      <nav>
+        <a href="privacy.html">개인정보처리방침</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="card">
-      <div id="swatch" class="swatch empty" aria-label="추출된 색상"></div>
+  <main class="page-main">
 
-      <div class="formats" id="formats">
-        <div class="format-row">
-          <span class="format-label">HEX</span>
-          <span class="format-value" id="hex-value">—</span>
-          <button class="copy-btn" id="copy-hex" disabled>Copy</button>
-        </div>
-        <div class="format-row">
-          <span class="format-label">RGB</span>
-          <span class="format-value" id="rgb-value">—</span>
-          <button class="copy-btn" id="copy-rgb" disabled>Copy</button>
-        </div>
-        <div class="format-row">
-          <span class="format-label">HSL</span>
-          <span class="format-value" id="hsl-value">—</span>
-          <button class="copy-btn" id="copy-hsl" disabled>Copy</button>
-        </div>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>화면의 모든 색상을<br />즉시 추출하세요</h1>
+      <p class="hero-desc">스포이드 도구로 화면 어디서든 색상을 클릭하면<br />HEX, RGB, HSL 코드를 바로 복사할 수 있습니다.</p>
+    </section>
+
+    <!-- Tool Card -->
+    <section class="tool-section" aria-label="색상 추출 도구">
+      <div id="unsupported-banner" class="banner hidden">
+        이 기능은 <strong>Chrome 또는 Edge</strong>에서만 지원됩니다.
       </div>
 
-      <button class="pick-btn" id="pick-btn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 2a5 5 0 0 1 5 5c0 2-1 3.5-2.5 5L9 17.5l-1 1-2 .5.5-2 1-1L12 11C10.5 9.5 9.5 8 9.5 6A5 5 0 0 1 12 2z"/>
-          <line x1="3" y1="21" x2="9" y2="15"/>
-        </svg>
-        스포이드로 추출
-      </button>
-    </div>
+      <div class="card">
+        <div id="swatch" class="swatch empty" aria-label="추출된 색상"></div>
+
+        <div class="formats" id="formats">
+          <div class="format-row">
+            <span class="format-label">HEX</span>
+            <span class="format-value" id="hex-value">—</span>
+            <button class="copy-btn" id="copy-hex" disabled>Copy</button>
+          </div>
+          <div class="format-row">
+            <span class="format-label">RGB</span>
+            <span class="format-value" id="rgb-value">—</span>
+            <button class="copy-btn" id="copy-rgb" disabled>Copy</button>
+          </div>
+          <div class="format-row">
+            <span class="format-label">HSL</span>
+            <span class="format-value" id="hsl-value">—</span>
+            <button class="copy-btn" id="copy-hsl" disabled>Copy</button>
+          </div>
+        </div>
+
+        <button class="pick-btn" id="pick-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2a5 5 0 0 1 5 5c0 2-1 3.5-2.5 5L9 17.5l-1 1-2 .5.5-2 1-1L12 11C10.5 9.5 9.5 8 9.5 6A5 5 0 0 1 12 2z"/>
+            <line x1="3" y1="21" x2="9" y2="15"/>
+          </svg>
+          스포이드로 추출
+        </button>
+      </div>
+    </section>
+
+    <!-- How to use -->
+    <section class="content-section">
+      <h2>사용 방법</h2>
+      <ol class="steps">
+        <li>
+          <strong>스포이드로 추출</strong> 버튼을 클릭합니다.
+          <p>Chrome 또는 Edge 브라우저에서 클릭하면 OS 스포이드 커서로 바뀝니다.</p>
+        </li>
+        <li>
+          <strong>원하는 색상 위치에 클릭</strong>합니다.
+          <p>브라우저 창 안팎 어디서든 — 열려 있는 다른 앱, 이미지, 웹사이트 등 화면의 모든 픽셀을 선택할 수 있습니다.</p>
+        </li>
+        <li>
+          <strong>색상 코드를 확인하고 복사</strong>합니다.
+          <p>HEX, RGB, HSL 세 가지 형식이 동시에 표시되며, 각각의 Copy 버튼으로 즉시 복사됩니다.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Color formats explained -->
+    <section class="content-section">
+      <h2>색상 포맷 안내</h2>
+      <div class="format-cards">
+        <div class="format-card">
+          <h3>HEX</h3>
+          <p>웹 개발에서 가장 널리 쓰이는 형식입니다. <code>#RRGGBB</code> 형태로 CSS, HTML, 디자인 툴 어디서나 바로 사용할 수 있습니다.</p>
+          <p class="example">예: <code>#1A73E8</code></p>
+        </div>
+        <div class="format-card">
+          <h3>RGB</h3>
+          <p>Red, Green, Blue 세 채널의 0–255 값으로 표현합니다. CSS <code>rgb()</code> 함수에 직접 사용하거나 투명도 조절 시 <code>rgba()</code>로 확장해 씁니다.</p>
+          <p class="example">예: <code>rgb(26, 115, 232)</code></p>
+        </div>
+        <div class="format-card">
+          <h3>HSL</h3>
+          <p>Hue(색상), Saturation(채도), Lightness(명도)로 표현합니다. 색조 조절이나 팔레트 생성 시 직관적으로 다루기 쉬운 형식입니다.</p>
+          <p class="example">예: <code>hsl(214, 80%, 51%)</code></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use cases -->
+    <section class="content-section">
+      <h2>이런 분들에게 유용합니다</h2>
+      <ul class="usecase-list">
+        <li><strong>웹 개발자</strong> — 디자인 시안이나 레퍼런스 사이트에서 색상 코드를 바로 추출해 CSS에 적용</li>
+        <li><strong>UI/UX 디자이너</strong> — 피그마, 스케치 등 툴에서 색상 확인 없이 실제 화면에서 직접 추출</li>
+        <li><strong>콘텐츠 크리에이터</strong> — 브랜드 컬러, 썸네일 색상을 정확히 맞춰 일관성 유지</li>
+        <li><strong>그래픽 디자이너</strong> — 인쇄물 작업 시 화면 색상을 정확히 파악해 컬러 매칭</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section">
+      <h2>자주 묻는 질문</h2>
+      <dl class="faq">
+        <div class="faq-item">
+          <dt>어떤 브라우저에서 사용할 수 있나요?</dt>
+          <dd>현재 <strong>Chrome 95 이상</strong>과 <strong>Edge 95 이상</strong>에서 지원됩니다. Firefox와 Safari는 EyeDropper API를 아직 지원하지 않습니다.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>브라우저 창 밖의 색상도 추출할 수 있나요?</dt>
+          <dd>네. OS 수준의 EyeDropper API를 사용하므로 다른 앱, 바탕화면, 열려 있는 이미지 등 화면의 모든 픽셀에서 색상을 추출할 수 있습니다.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>추출한 색상은 어디에 저장되나요?</dt>
+          <dd>서버에 저장되지 않습니다. 추출된 색상은 브라우저 화면에만 표시되며, 페이지를 새로고침하면 초기화됩니다.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>모바일에서도 사용할 수 있나요?</dt>
+          <dd>현재 모바일 브라우저에서는 EyeDropper API가 지원되지 않아 사용이 불가합니다. PC 브라우저(Chrome 또는 Edge)에서 이용해 주세요.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>색상 코드를 복사할 때 어떤 형식으로 복사되나요?</dt>
+          <dd>HEX는 <code>#FF5733</code>, RGB는 <code>rgb(255, 87, 51)</code>, HSL은 <code>hsl(14, 100%, 60%)</code> 형식으로 복사됩니다. 각 Copy 버튼을 누르면 해당 형식만 클립보드에 저장됩니다.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>무료로 사용할 수 있나요?</dt>
+          <dd>네, 완전 무료입니다. 회원가입이나 별도 설치 없이 브라우저에서 바로 사용할 수 있습니다.</dd>
+        </div>
+      </dl>
+    </section>
+
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Pixel Pick</p>
+      <p class="footer-desc">화면 색상 추출 무료 도구 — HEX, RGB, HSL 코드를 즉시 복사하세요</p>
+      <nav class="footer-nav">
+        <a href="privacy.html">개인정보처리방침</a>
+      </nav>
+      <p class="footer-copy">© 2026 Pixel Pick. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
