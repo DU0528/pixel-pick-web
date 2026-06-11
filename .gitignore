@@ -1,0 +1,12 @@
+# 영상/이미지 바이너리
+*.mov
+*.mp4
+*.avi
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# OS 메타파일
+.DS_Store
+Thumbs.db
