@@ -1,4 +1,4 @@
-# Pixel Pick — Color Picker Web App 스펙
+# Pixel Color Pick — Color Picker Web App 스펙
 
 ## Context
 
