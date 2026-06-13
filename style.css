@@ -206,6 +206,62 @@ body {
 .pick-btn:active:not(:disabled) { transform: scale(0.98); }
 .pick-btn:disabled { opacity: 0.4; cursor: default; }
 
+/* ── Content intro (before tool) ── */
+.content-intro {
+  margin-bottom: 32px;
+}
+
+.content-intro p {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.content-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Usage tip callout (after tool) ── */
+.usage-tip {
+  max-width: 420px;
+  margin: -24px auto 48px;
+  padding: 12px 16px;
+  background: #eff6ff;
+  border-left: 3px solid #3b82f6;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.875rem;
+  color: #1e40af;
+  line-height: 1.6;
+}
+
+/* ── Color guide grid ── */
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.guide-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.guide-item h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.guide-item p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
 /* ── Content sections ── */
 .content-section {
   margin-bottom: 48px;

@@ -12,6 +12,23 @@
   <link rel="canonical" href="https://pixel-pick.pages.dev/" />
   <link rel="stylesheet" href="style.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2798929393747698" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Pixel Color Pick",
+    "url": "https://pixel-pick.pages.dev/",
+    "description": "화면 어디서든 원하는 색상을 클릭 한 번으로 추출하세요. HEX, RGB, HSL 코드를 즉시 확인하고 바로 복사할 수 있는 무료 색상 추출 도구입니다.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Chrome 95+, Edge 95+",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "KRW"
+    },
+    "featureList": ["HEX 색상 코드 추출", "RGB 색상 코드 추출", "HSL 색상 코드 추출", "클립보드 복사", "EyeDropper API 활용"]
+  }
+  </script>
 </head>
 <body>
 
@@ -30,6 +47,12 @@
     <section class="hero">
       <h1>화면의 모든 색상을<br />즉시 추출하세요</h1>
       <p class="hero-desc">스포이드 도구로 화면 어디서든 색상을 클릭하면<br />HEX, RGB, HSL 코드를 바로 복사할 수 있습니다.</p>
+    </section>
+
+    <!-- Article intro: editorial content before the tool ensures no viewport is content-free -->
+    <section class="content-intro">
+      <p>화면 색상 추출 도구(Color Picker)는 모니터에 표시된 모든 픽셀에서 정확한 색상 값을 읽어내는 디지털 스포이드입니다. Chrome과 Edge 브라우저에 내장된 <strong>EyeDropper API</strong>를 활용하므로 별도 프로그램 설치 없이 바로 사용할 수 있습니다.</p>
+      <p>추출된 색상은 웹에서 가장 널리 쓰이는 HEX, RGB, HSL 세 가지 포맷으로 동시에 표시됩니다. 각 Copy 버튼으로 원하는 형식을 클립보드에 즉시 저장해 CSS 코드나 디자인 툴에 바로 붙여넣을 수 있습니다.</p>
     </section>
 
     <!-- Tool Card -->
@@ -68,6 +91,10 @@
         </button>
       </div>
     </section>
+
+    <div class="usage-tip">
+      <strong>사용 팁</strong> — 버튼 클릭 후 커서가 스포이드 모양으로 바뀌면 화면 어디든 자유롭게 클릭하세요. 다른 앱, 이미지, 바탕화면의 색상도 추출됩니다.
+    </div>
 
     <!-- How to use -->
     <section class="content-section">
@@ -150,6 +177,29 @@
           <dd>네, 완전 무료입니다. 회원가입이나 별도 설치 없이 브라우저에서 바로 사용할 수 있습니다.</dd>
         </div>
       </dl>
+    </section>
+
+    <!-- Color code usage guide -->
+    <section class="content-section">
+      <h2>색상 코드 활용 가이드</h2>
+      <div class="guide-grid">
+        <div class="guide-item">
+          <h3>HEX 코드 활용</h3>
+          <p>추출한 HEX 코드는 CSS에서 <code>color: #FF5733</code>처럼 직접 사용하거나, Figma·Sketch 컬러 피커에 붙여넣어 정확한 색상을 재현할 수 있습니다. 브랜드 컬러 가이드라인을 만들 때도 HEX가 표준 형식으로 쓰입니다.</p>
+        </div>
+        <div class="guide-item">
+          <h3>RGB로 투명도 조절</h3>
+          <p>CSS에서 투명도가 필요할 때는 <code>rgba(255, 87, 51, 0.5)</code>처럼 알파 채널을 추가합니다. 추출한 RGB 값을 그대로 활용해 배경 오버레이나 호버 효과를 간단히 구현할 수 있습니다.</p>
+        </div>
+        <div class="guide-item">
+          <h3>HSL로 색상 변형</h3>
+          <p>HSL의 L(밝기) 값을 조절하면 같은 색조의 밝은·어두운 버전을 손쉽게 만들 수 있습니다. 버튼 호버 상태나 그라디언트 팔레트 생성에 특히 유용한 포맷입니다.</p>
+        </div>
+        <div class="guide-item">
+          <h3>접근성 검토</h3>
+          <p>배경색과 텍스트 색상을 추출한 뒤 WCAG 명암비 계산기로 4.5:1 이상의 비율을 충족하는지 확인하세요. 접근성을 갖춘 색상 조합은 더 많은 사용자에게 읽기 편한 UI를 제공합니다.</p>
+        </div>
+      </div>
     </section>
 
   </main>
