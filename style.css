@@ -36,6 +36,16 @@ body {
   color: #1a1a2e;
 }
 
+.header-inner nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+a.nav-logo {
+  text-decoration: none;
+}
+
 .header-inner nav a {
   font-size: 0.85rem;
   color: #6b7280;

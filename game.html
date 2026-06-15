@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>색깔 맞추기 게임 — Pixel Color Pick</title>
+  <meta name="description" content="5초 동안 색상을 기억하고 컬러 휠에서 찾아보세요! 색감 감각을 테스트하는 무료 색깔 맞추기 게임입니다. 5라운드, 최대 500점." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="canonical" href="https://pixelcolorpick.co.kr/game.html" />
+  <meta property="og:title" content="색깔 맞추기 게임 — Pixel Color Pick" />
+  <meta property="og:description" content="5초 동안 색상을 기억하고 컬러 휠에서 찾아보세요! 색감 감각 테스트." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pixelcolorpick.co.kr/game.html" />
+  <link rel="stylesheet" href="style.css?v=20260615b" />
+  <link rel="stylesheet" href="game.css?v=20260615d" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2798929393747698" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="nav-logo">Pixel Color Pick</a>
+      <nav>
+        <a href="/game.html" aria-current="page">색깔 기억 게임</a>
+        <a href="/privacy.html">개인정보처리방침</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="game-section" aria-label="색깔 맞추기 게임">
+
+      <!-- ── Intro ── -->
+      <div id="screen-intro" class="game-screen">
+        <h1 class="game-title">색깔 맞추기</h1>
+        <p class="game-subtitle">색상을 기억하고 컬러 휠에서 찾아보세요</p>
+        <ul class="rules-list">
+          <li>5초 동안 색상 기억</li>
+          <li>10초 내 컬러 휠에서 선택</li>
+          <li>5라운드 진행 · 라운드당 최대 100점</li>
+        </ul>
+        <button class="btn-primary" id="btn-start">게임 시작</button>
+      </div>
+
+      <!-- ── Memorize ── -->
+      <div id="screen-memorize" class="game-screen" hidden>
+        <div class="round-badge">Round <span id="memorize-round">1</span> / 5</div>
+        <p class="phase-hint">이 색상을 기억하세요</p>
+        <div class="target-swatch-wrap">
+          <div id="target-swatch" class="target-swatch"></div>
+          <div class="memorize-count" id="memorize-count">5</div>
+        </div>
+      </div>
+
+      <!-- ── Select ── -->
+      <div id="screen-select" class="game-screen" hidden>
+        <div class="round-badge">Round <span id="select-round">1</span> / 5</div>
+        <p class="phase-hint">컬러 휠에서 색상을 선택하세요</p>
+        <div class="select-layout">
+          <div class="selected-swatch-wrap">
+            <div id="selected-swatch" class="selected-swatch"></div>
+            <span class="select-swatch-label">선택 중</span>
+          </div>
+          <div class="wheel-container">
+            <canvas id="color-wheel" aria-label="색상 선택 컬러 휠"></canvas>
+            <div id="selector-dot" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="timer-wrap">
+          <div class="timer-ring-wrap">
+            <svg class="timer-ring" viewBox="0 0 64 64" aria-hidden="true">
+              <circle class="timer-bg"  cx="32" cy="32" r="28"/>
+              <circle class="timer-arc" cx="32" cy="32" r="28" id="timer-arc"/>
+            </svg>
+            <span class="timer-num" id="timer-num">10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Result ── -->
+      <div id="screen-result" class="game-screen" hidden>
+        <div class="round-badge">Round <span id="result-round">1</span> / 5 결과</div>
+        <div class="compare-wrap">
+          <div class="compare-item">
+            <div class="compare-swatch" id="answer-swatch"></div>
+            <span class="compare-label">정답</span>
+          </div>
+          <div class="compare-vs">vs</div>
+          <div class="compare-item">
+            <div class="compare-swatch" id="picked-swatch"></div>
+            <span class="compare-label">내 선택</span>
+          </div>
+        </div>
+        <div class="score-display">
+          <span class="score-big" id="round-score">0</span>
+          <span class="score-unit">/ 100점</span>
+        </div>
+        <button class="btn-primary" id="btn-next">다음 →</button>
+      </div>
+
+      <!-- ── Final ── -->
+      <div id="screen-final" class="game-screen" hidden>
+        <h2 class="final-title">게임 종료!</h2>
+        <div class="total-score-display">
+          <span class="total-score-num" id="total-score">0</span>
+          <span class="total-score-unit">/ 500점</span>
+        </div>
+        <div class="rounds-summary" id="rounds-summary"></div>
+        <div class="share-wrap">
+          <button class="btn-share btn-kakao" id="btn-kakao">
+            카카오톡 공유
+          </button>
+          <button class="btn-share btn-copy" id="btn-copy">
+            링크 복사
+          </button>
+        </div>
+        <button class="btn-secondary" id="btn-restart">다시 하기</button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Pixel Color Pick</p>
+      <p class="footer-desc">화면 색상 추출 무료 도구 — HEX, RGB, HSL 코드를 즉시 복사하세요</p>
+      <nav class="footer-nav">
+        <a href="/game.html">색깔 기억 게임</a>
+        &nbsp;·&nbsp;
+        <a href="/privacy.html">개인정보처리방침</a>
+      </nav>
+      <p class="footer-copy">© 2026 Pixel Color Pick. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="game.js?v=20260615d"></script>
+</body>
+</html>
