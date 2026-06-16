@@ -1,0 +1,350 @@
+/* ── Cards game section ──────────────────────────────────────────────────────── */
+.cards-section { max-width: 560px; }
+
+/* ── Setup ───────────────────────────────────────────────────────────────────── */
+.setup-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.setup-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.setup-hint {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+/* Segmented control */
+.seg {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.seg-btn {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.seg-btn:hover:not(:disabled):not(.is-active) { background: #e5e7eb; }
+
+.seg-btn.is-active {
+  background: #1a1a2e;
+  color: #fff;
+  border-color: #1a1a2e;
+}
+
+.seg-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Name inputs */
+.name-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name-input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.name-input:focus {
+  border-color: #4f46e5;
+  background: #fff;
+}
+
+/* Colorblind toggle */
+.toggle-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.toggle-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.toggle-sub {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.toggle-input { position: absolute; opacity: 0; pointer-events: none; }
+
+.toggle-track {
+  position: relative;
+  width: 44px;
+  height: 26px;
+  background: #d1d5db;
+  border-radius: 100px;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.toggle-track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.toggle-input:checked + .toggle-track { background: #4f46e5; }
+.toggle-input:checked + .toggle-track::after { transform: translateX(18px); }
+
+/* ── Play HUD ────────────────────────────────────────────────────────────────── */
+.play-hud { width: 100%; }
+
+/* display:flex 아래의 요소는 [hidden] UA 규칙을 덮으므로 명시적으로 숨긴다 */
+.hud-timer[hidden],
+.scoreboard[hidden] { display: none; }
+
+.hud-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hud-timer-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hud-timer-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  font-variant-numeric: tabular-nums;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.score-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #f3f4f6;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.score-pill.is-turn {
+  background: #eef2ff;
+  border-color: #4f46e5;
+}
+
+.score-name { font-weight: 600; color: #374151; }
+
+.score-val {
+  font-weight: 800;
+  color: #4f46e5;
+  font-variant-numeric: tabular-nums;
+}
+
+.sd-banner {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background: #fef2f2;
+  color: #dc2626;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: 10px;
+}
+
+/* ── Board ───────────────────────────────────────────────────────────────────── */
+.board {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: clamp(5px, 1.4vw, 10px);
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  aspect-ratio: 1;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  perspective: 600px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.35s;
+}
+
+.card.is-revealed .card-inner,
+.card.is-matched  .card-inner { transform: rotateY(180deg); }
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+.card-back {
+  background: linear-gradient(135deg, #2d2d4e, #1a1a2e);
+}
+
+.card-back::after {
+  content: "?";
+  color: rgba(255,255,255,0.35);
+  font-size: clamp(0.9rem, 3.5vw, 1.4rem);
+  font-weight: 800;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+}
+
+.card-symbol {
+  display: none;
+  color: rgba(0,0,0,0.55);
+  font-size: clamp(0.7rem, 2.6vw, 1.1rem);
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.4);
+}
+
+/* 색약 모드: 색 위에 기호 노출 */
+.board.cb .card-symbol { display: block; }
+
+.card.is-matched { cursor: default; }
+.card.is-matched .card-inner { animation: matchedPulse 0.4s ease; }
+.card.is-matched .card-front { box-shadow: 0 0 0 3px #4f46e5, 0 2px 8px rgba(79,70,229,0.4); }
+
+@keyframes matchedPulse {
+  0%   { transform: rotateY(180deg) scale(1); }
+  50%  { transform: rotateY(180deg) scale(1.08); }
+  100% { transform: rotateY(180deg) scale(1); }
+}
+
+.card:focus-visible { outline: 3px solid #4f46e5; outline-offset: 2px; border-radius: 12px; }
+
+.btn-quit { max-width: 200px; }
+
+/* ── Result ──────────────────────────────────────────────────────────────────── */
+.result-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.result-time {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #4f46e5;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.result-sub { font-size: 1rem; color: #6b7280; }
+
+.result-best { font-size: 0.95rem; font-weight: 700; color: #16a34a; }
+.result-best.muted { color: #9ca3af; font-weight: 500; }
+
+.result-winner {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  text-align: center;
+}
+
+.ranking {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rank-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #f9fafb;
+  border-radius: 10px;
+}
+
+.rank-pos {
+  width: 24px;
+  font-weight: 800;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.rank-name { font-weight: 600; color: #374151; }
+
+.rank-score {
+  margin-left: auto;
+  font-weight: 700;
+  color: #4f46e5;
+}
