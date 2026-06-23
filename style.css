@@ -39,7 +39,9 @@ body {
 .header-inner nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  justify-content: flex-end;
 }
 
 a.nav-logo {
@@ -521,6 +523,90 @@ a.nav-logo {
   color: #6b7280;
   line-height: 1.6;
 }
+
+/* Guide cards as links */
+a.guide-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+a.guide-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+a.guide-item h3 { color: #1a1a2e; }
+
+/* ── Article (guide/about/contact prose) ── */
+.article-meta {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 32px;
+}
+
+.prose p,
+.prose li {
+  font-size: 0.975rem;
+  color: #374151;
+  line-height: 1.85;
+}
+
+.prose p { margin-bottom: 18px; }
+
+.prose h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 40px 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.prose h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 28px 0 10px;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 22px;
+  margin-bottom: 18px;
+}
+
+.prose li { margin-bottom: 8px; }
+
+.prose a { color: #4f46e5; }
+
+.prose strong { color: #1a1a2e; }
+
+.prose .lead {
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+/* CTA box at end of articles */
+.cta-box {
+  margin-top: 40px;
+  padding: 22px 24px;
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  border-radius: 0 10px 10px 0;
+}
+
+.cta-box p {
+  font-size: 0.95rem;
+  color: #1e40af;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cta-box a { color: #1d4ed8; font-weight: 600; }
 
 /* ── Content sections ── */
 .content-section {

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HEX·RGB·HSL 색상 코드 완벽 가이드 — 차이와 변환법 | Pixel Color Pick</title>
+  <meta name="description" content="웹에서 쓰는 세 가지 색상 코드 HEX·RGB·HSL의 구조와 차이, 서로 변환하는 원리, 그리고 상황별로 어떤 표기법을 골라야 하는지 한 번에 정리했습니다." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="canonical" href="https://pixelcolorpick.co.kr/guide-color-codes.html" />
+  <meta property="og:title" content="HEX·RGB·HSL 색상 코드 완벽 가이드" />
+  <meta property="og:description" content="세 가지 색상 표기법의 차이와 변환 원리, 상황별 선택법을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://pixelcolorpick.co.kr/guide-color-codes.html" />
+  <meta property="og:image" content="https://pixelcolorpick.co.kr/favicon.png" />
+  <link rel="stylesheet" href="style.css?v=20260623a" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2798929393747698" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "HEX·RGB·HSL 색상 코드 완벽 가이드 — 차이와 변환법",
+    "description": "웹에서 쓰는 세 가지 색상 코드 HEX·RGB·HSL의 구조와 차이, 변환 원리, 상황별 선택법을 정리한 가이드입니다.",
+    "author": { "@type": "Organization", "name": "Pixel Color Pick" },
+    "publisher": { "@type": "Organization", "name": "Pixel Color Pick" },
+    "mainEntityOfPage": "https://pixelcolorpick.co.kr/guide-color-codes.html"
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="nav-logo">Pixel Color Pick</a>
+      <nav>
+        <a href="/guide.html">색상 가이드</a>
+        <a href="/game.html">색깔 기억 게임</a>
+        <a href="/cards.html">색깔 카드 게임</a>
+        <a href="/about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <article class="prose">
+      <h1>HEX·RGB·HSL 색상 코드 완벽 가이드</h1>
+      <p class="article-meta">색상 가이드 · <a href="/guide.html">← 목록으로</a></p>
+
+      <p class="lead">웹과 디자인 도구에서 같은 색을 표현하는 방법은 여러 가지입니다. 가장 널리 쓰이는 세 가지가 HEX, RGB, HSL입니다. 셋은 똑같은 색을 가리키지만 "사람이 다루기 쉬운 방식"이 서로 다릅니다. 차이를 이해하면 상황에 맞는 표기법을 골라 작업 속도를 높일 수 있습니다.</p>
+
+      <h2>세 가지 표기법은 결국 같은 색</h2>
+      <p>모니터의 모든 색은 빨강(R)·초록(G)·파랑(B) 빛을 섞어 만듭니다. HEX와 RGB는 이 세 빛의 양을 직접 표기하는 방식이고, HSL은 사람이 색을 인지하는 방식(색조·채도·명도)에 가깝게 다시 표현한 것입니다. 어떤 표기를 쓰든 화면에 찍히는 픽셀은 동일합니다.</p>
+
+      <h2>HEX — 가장 보편적인 표기</h2>
+      <p>HEX는 <code>#RRGGBB</code> 형태로, 각 두 자리가 R·G·B의 양을 16진수(00~FF, 즉 0~255)로 나타냅니다. 예를 들어 <code>#1A73E8</code>은 빨강 26, 초록 115, 파랑 232를 의미합니다. 짧고 복사·붙여넣기가 쉬워 CSS, HTML, Figma 등 거의 모든 곳에서 표준처럼 쓰입니다.</p>
+      <p>같은 숫자가 반복되면 <code>#FFFFFF</code>를 <code>#FFF</code>처럼 세 자리로 줄여 쓸 수 있고, 끝에 두 자리를 더해 <code>#1A73E880</code>처럼 투명도(알파)를 넣기도 합니다.</p>
+
+      <h2>RGB — 투명도 조절에 강하다</h2>
+      <p>RGB는 <code>rgb(26, 115, 232)</code>처럼 세 채널을 0~255 사이 숫자로 적습니다. HEX와 정보량은 같지만 사람이 숫자를 직관적으로 읽고 조정하기 쉽습니다. 특히 투명도가 필요할 때 <code>rgba(26, 115, 232, 0.5)</code>처럼 알파 값을 더해 반투명 오버레이나 그림자를 손쉽게 만들 수 있습니다.</p>
+
+      <h2>HSL — 색을 "감각적으로" 다룬다</h2>
+      <p>HSL은 <code>hsl(214, 80%, 51%)</code> 형태로 <strong>Hue(색조)</strong>, <strong>Saturation(채도)</strong>, <strong>Lightness(명도)</strong>를 나타냅니다. 색조는 0~360도의 각도(0=빨강, 120=초록, 240=파랑), 채도와 명도는 백분율입니다. HSL의 진짜 강점은 <strong>변형</strong>에 있습니다. 색조는 그대로 두고 명도만 낮추면 "같은 색의 어두운 버전"을, 채도만 낮추면 "차분한 버전"을 즉시 만들 수 있어 버튼 hover 상태나 팔레트 단계 생성에 매우 유용합니다.</p>
+
+      <h2>서로 어떻게 변환될까</h2>
+      <p>HEX와 RGB는 사실상 같은 데이터의 다른 표기라 변환이 단순합니다. 16진수 두 자리를 10진수로 바꾸면 RGB가 됩니다(예: <code>1A</code> = 26). RGB를 HSL로 바꿀 때는 세 채널 중 최대·최소값으로 명도와 채도를 구하고, 어떤 채널이 가장 큰지로 색조 각도를 계산합니다. 계산이 번거롭다면 <a href="/">색상 추출 도구</a>가 한 번의 추출로 세 형식을 동시에 보여 주므로 직접 변환할 필요가 없습니다.</p>
+
+      <h2>언제 무엇을 쓸까</h2>
+      <ul>
+        <li><strong>HEX</strong> — 색을 그냥 지정하거나 공유할 때. 가장 짧고 호환성이 좋습니다.</li>
+        <li><strong>RGB / RGBA</strong> — 반투명 효과가 필요하거나 채널 값을 코드로 계산할 때.</li>
+        <li><strong>HSL</strong> — 한 색을 기준으로 밝기·채도 변형을 만들거나 팔레트를 체계적으로 구성할 때.</li>
+      </ul>
+
+      <div class="cta-box">
+        <p>지금 화면이나 이미지에서 색을 뽑아 세 형식을 한 번에 확인해 보세요 → <a href="/">화면 색상 추출 도구 사용하기</a>. 색을 조합하는 방법이 궁금하다면 <a href="/guide-color-harmony.html">색상 조화 이론</a>도 함께 읽어보세요.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Pixel Color Pick</p>
+      <p class="footer-desc">화면 색상 추출 무료 도구 — HEX, RGB, HSL 코드를 즉시 복사하세요</p>
+      <nav class="footer-nav">
+        <a href="/">색상 추출 도구</a>
+        &nbsp;·&nbsp;
+        <a href="/guide.html">색상 가이드</a>
+        &nbsp;·&nbsp;
+        <a href="/game.html">색깔 기억 게임</a>
+        &nbsp;·&nbsp;
+        <a href="/cards.html">색깔 카드 게임</a>
+        &nbsp;·&nbsp;
+        <a href="/about.html">소개</a>
+        &nbsp;·&nbsp;
+        <a href="/contact.html">문의</a>
+        &nbsp;·&nbsp;
+        <a href="/privacy.html">개인정보처리방침</a>
+      </nav>
+      <p class="footer-copy">© 2026 Pixel Color Pick. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>웹 접근성을 위한 색상 대비(WCAG 명암비) 이해하기 | Pixel Color Pick</title>
+  <meta name="description" content="텍스트와 배경의 색 대비가 왜 중요한지, WCAG 명암비 4.5:1이 무슨 뜻인지, 그리고 누구나 읽기 쉬운 색 조합을 만드는 실전 방법을 정리했습니다." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="canonical" href="https://pixelcolorpick.co.kr/guide-color-contrast.html" />
+  <meta property="og:title" content="웹 접근성을 위한 색상 대비(WCAG) 이해하기" />
+  <meta property="og:description" content="명암비 4.5:1의 의미와 계산법, 누구나 읽기 쉬운 색 조합 만들기." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://pixelcolorpick.co.kr/guide-color-contrast.html" />
+  <meta property="og:image" content="https://pixelcolorpick.co.kr/favicon.png" />
+  <link rel="stylesheet" href="style.css?v=20260623a" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2798929393747698" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "웹 접근성을 위한 색상 대비(WCAG 명암비) 이해하기",
+    "description": "텍스트와 배경의 색 대비, WCAG 명암비 4.5:1의 의미와 계산법, 읽기 쉬운 색 조합을 만드는 방법을 정리한 가이드입니다.",
+    "author": { "@type": "Organization", "name": "Pixel Color Pick" },
+    "publisher": { "@type": "Organization", "name": "Pixel Color Pick" },
+    "mainEntityOfPage": "https://pixelcolorpick.co.kr/guide-color-contrast.html"
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="nav-logo">Pixel Color Pick</a>
+      <nav>
+        <a href="/guide.html">색상 가이드</a>
+        <a href="/game.html">색깔 기억 게임</a>
+        <a href="/cards.html">색깔 카드 게임</a>
+        <a href="/about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <article class="prose">
+      <h1>웹 접근성을 위한 색상 대비(WCAG) 이해하기</h1>
+      <p class="article-meta">색상 가이드 · <a href="/guide.html">← 목록으로</a></p>
+
+      <p class="lead">아무리 예쁜 색을 골라도 텍스트가 배경에 묻혀 읽히지 않으면 소용이 없습니다. 색상 대비는 "보기 좋다"의 문제가 아니라 "읽을 수 있다"의 문제이며, 시력이 약하거나 색을 구분하기 어려운 사용자, 햇빛 아래에서 화면을 보는 사용자 모두에게 영향을 줍니다.</p>
+
+      <h2>명암비란 무엇인가</h2>
+      <p>명암비(contrast ratio)는 두 색의 상대 밝기 차이를 1:1에서 21:1 사이의 비율로 나타낸 값입니다. 흰색 위의 검정 글씨가 최대값인 21:1이고, 두 색이 같으면 1:1입니다. 비율이 높을수록 글자가 또렷하게 보입니다. 핵심은 색조가 아니라 <strong>밝기 차이</strong>라는 점입니다. 빨강과 초록처럼 색은 전혀 다르지만 밝기가 비슷하면 대비가 낮아 잘 안 읽힙니다.</p>
+
+      <h2>WCAG 기준 — 4.5:1과 3:1</h2>
+      <p>웹 접근성 지침(WCAG)은 텍스트 가독성에 대해 명확한 기준을 제시합니다.</p>
+      <ul>
+        <li><strong>일반 텍스트</strong>(본문 크기) — 최소 <strong>4.5:1</strong> 이상 (AA 등급).</li>
+        <li><strong>큰 텍스트</strong>(약 18.66px 굵게 또는 24px 이상) — 최소 <strong>3:1</strong> 이상.</li>
+        <li><strong>더 엄격한 AAA 등급</strong> — 일반 텍스트 7:1, 큰 텍스트 4.5:1.</li>
+        <li><strong>UI 요소·아이콘</strong>(버튼 테두리, 입력창 경계 등) — 인접 색과 최소 3:1.</li>
+      </ul>
+
+      <h2>왜 색조만 보면 안 될까</h2>
+      <p>사람의 눈은 색조보다 밝기에 훨씬 민감합니다. 그래서 명암비 계산은 각 색의 RGB 값을 밝기(상대 휘도)로 환산한 뒤 비교합니다. 연한 회색 배경에 연한 노란 글씨처럼 둘 다 밝으면, 색은 달라도 대비가 부족해 읽기 힘듭니다. 반대로 짙은 남색 배경에 흰 글씨는 색조와 무관하게 대비가 충분합니다.</p>
+
+      <h2>실전에서 대비를 확보하는 법</h2>
+      <ul>
+        <li><strong>밝기 차를 먼저 확보하세요.</strong> 색을 고른 뒤 명도(HSL의 L)를 양쪽으로 충분히 벌리면 대비가 자연스럽게 올라갑니다.</li>
+        <li><strong>색만으로 정보를 전달하지 마세요.</strong> "빨간 항목은 오류"처럼 색에만 의존하면 색각 이상 사용자가 구분하지 못합니다. 아이콘·라벨·밑줄을 함께 쓰세요.</li>
+        <li><strong>실제 색을 추출해 검증하세요.</strong> 디자인 시안의 배경색과 글자색을 <a href="/">색상 추출 도구</a>로 뽑아 명암비 계산기에 넣어 4.5:1을 넘는지 확인하면 확실합니다.</li>
+        <li><strong>호버·비활성 상태도 점검하세요.</strong> 기본 상태만 통과하고 흐려진 비활성 텍스트가 기준에 못 미치는 경우가 흔합니다.</li>
+      </ul>
+
+      <div class="cta-box">
+        <p>배경과 글자 색의 정확한 코드가 필요하다면 <a href="/">색상 추출 도구</a>로 추출해 보세요. 색을 고르는 단계가 궁금하다면 <a href="/guide-brand-palette.html">브랜드 팔레트 만드는 법</a>이 도움이 됩니다.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Pixel Color Pick</p>
+      <p class="footer-desc">화면 색상 추출 무료 도구 — HEX, RGB, HSL 코드를 즉시 복사하세요</p>
+      <nav class="footer-nav">
+        <a href="/">색상 추출 도구</a>
+        &nbsp;·&nbsp;
+        <a href="/guide.html">색상 가이드</a>
+        &nbsp;·&nbsp;
+        <a href="/game.html">색깔 기억 게임</a>
+        &nbsp;·&nbsp;
+        <a href="/cards.html">색깔 카드 게임</a>
+        &nbsp;·&nbsp;
+        <a href="/about.html">소개</a>
+        &nbsp;·&nbsp;
+        <a href="/contact.html">문의</a>
+        &nbsp;·&nbsp;
+        <a href="/privacy.html">개인정보처리방침</a>
+      </nav>
+      <p class="footer-copy">© 2026 Pixel Color Pick. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

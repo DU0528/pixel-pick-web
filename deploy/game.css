@@ -2,7 +2,9 @@
 .header-inner nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  justify-content: flex-end;
 }
 
 a.nav-logo {
